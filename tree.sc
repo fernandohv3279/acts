@@ -11,7 +11,6 @@ enum Tree[+A]:
     case Leaf(i) => Leaf(f(i))
     case Branch(l,r) => Branch(l.map(f),r.map(f))
 
-
 import Tree.*
 // val t = Branch(Branch(Leaf("a"),Leaf("b")),Branch(Leaf("c"),Leaf("hola")))
 val t = Branch(Branch(Leaf(-1),Leaf(2)),Branch(Leaf(-3),Leaf(4)))
@@ -45,7 +44,6 @@ def main(args: Array[String]) = {
 def maximum(t: Tree[Int]): Int = t match
   case Leaf(i) => i
   case Branch(l,r) => maximum(l).max(maximum(r))
-
 
 // Exercise 3.27
 // Write a function, map, analogous to the method of the same name on
