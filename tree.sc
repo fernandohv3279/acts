@@ -15,12 +15,14 @@ import Tree.*
 // val t = Branch(Branch(Leaf("a"),Leaf("b")),Branch(Leaf("c"),Leaf("hola")))
 val t = Branch(Branch(Leaf(-1),Leaf(2)),Branch(Leaf(-3),Leaf(4)))
 
+// Option 1
 def firstPositive(t: Tree[Int]): Int = t match
   case Leaf(i) => i
   case Branch(l,r) =>
     val lpos = firstPositive(l)
     if lpos > 0 then lpos else firstPositive(r)
 
+// Option 2
 extension (t: Tree[Int]) def firstPositiveExt: Int = t match
   case Leaf(i) => i
   case Branch(l,r) =>
